@@ -1,0 +1,18 @@
+<html>
+<head>
+</head>
+
+<body>
+	<div class="container">
+		<h1>Login</h1>
+		<form method="post"  action="/clients/login">
+			<input type="text" name="input" placeholder="Client Email or admin or user" /><br />
+	
+			<input type="submit" value="Log In">
+		</form>
+        <p>This simple form heps simulate basic log in operations. You can either log in with any email available on the Mocky.io or if you prefer, use "admin" or "user" in order to get the right authorisations.</p>
+
+	</div>
+</body>
+
+</html>

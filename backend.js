@@ -9,14 +9,15 @@ bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(cors())
+app.use(cors());
 
 // ====================Routes==================
 
 const clientsRoutes = require("./routes/clients.js");
 const policiesRoutes = require("./routes/policies.js");
+const menuRoutes= require ("./routes/menu.js");
 
-
+app.use ("/", menuRoutes)
 app.use("/clients", clientsRoutes);
 app.use("/policies", policiesRoutes);
 app.set('views', path.join(__dirname, 'views'))

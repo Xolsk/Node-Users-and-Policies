@@ -2,7 +2,9 @@ const express = require('express'),
     router = express.Router(),
     controller = require('../controllers/clients.js');
 
-    router.get("/", controller.login); //Logs in order to know if user is an admin or not
+    router.get("/", controller.loginMenu); //Get you to the simple log in menu.
+
+    router.post("/login", controller.login) //Validates log in data.
 
     router.get("/byId:id", controller.getClientById); //Gets user data filtered by id.
 
