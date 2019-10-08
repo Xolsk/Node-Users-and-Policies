@@ -11,7 +11,7 @@ This will provide you with the token needed to proceed around.
 All the other routes are GET routes. Add as param with the correct key what you are looking for. Remember to copy and paste the token generated when
 login in in order to be authorised to proceed. The token can be added to the header or the body with key "token".
 
-localhost:5000/client/byId/:Id
+localhost:5000/client/byId/:id
 
 localhost:5000/client/byName/:name
 
