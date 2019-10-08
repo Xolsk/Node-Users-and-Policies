@@ -12,8 +12,11 @@ All the other routes are GET routes. Add as param with the correct key what you 
 login in in order to be authorised to proceed. The token can be added to the header or the body with key "token".
 
 localhost:5000/client/byId/:Id
+
 localhost:5000/client/byName/:name
+
 localhost:5000/policies/poliByName/:name
+
 localhost:5000/policies/userByPol/:policy
 
 will return with the correct data or error messages accoding to your specific inputs && user role.
