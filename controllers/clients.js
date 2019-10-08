@@ -38,9 +38,8 @@ class clientsController {
         catch (error) { res.send({ error }) }
     }
 
-    async getClientById(req, res) {
+    async clientById(req, res) {
         const id = req.params.id;
-        let data = {}
         try {
             await fetch('http://www.mocky.io/v2/5808862710000087232b75ac')
                 .then(answer => {
@@ -48,26 +47,27 @@ class clientsController {
                         return answer.json();
                     }
                 })
-                .then(list => {
-                    const clientList = list.clients;
+                .then(response=> {
+                    const clientList = response.clients;
                     for (let i in clientList) {
                         if (clientList[i].id === id) {
-                            data = { match: clientList[i]};
+                            var foundClient = { match: clientList[i]};
+                            res.send(foundClient)
                             break;
                         }
-                        else {data={match:"ID has no match."}};
                     }
-                    res.send(data)
-                })
+                    if (foundClient===undefined){
+                        const message={message:"No client by the provided Id."}
+                        res.render("error", message);}
+                    })
                 .catch(e => { console.log(e) })
         }
         catch (error) { res.send({ error }) }
     }
 
 
-    async getClientByName(req, res) {
-        const name = req.params.name;
-        let data = {}
+    async clientByName(req, res) {
+        const name = req.params.name;     
         try {
             await fetch('http://www.mocky.io/v2/5808862710000087232b75ac')
                 .then(answer => {
@@ -75,18 +75,21 @@ class clientsController {
                         return answer.json();
                     }
                 })
-                .then(list => {
-                    const clientList = list.clients;
+                .then(response => {
+                    const clientList = response.clients;
                     for (let i in clientList) {
                         if (clientList[i].name === name) {
-                            data = { match: clientList[i]};
+                            var foundClient = clientList[i];
+                            res.send(foundClient)
                             break;
-                        }
-                        else {data={match:"Name has no match."}};
+                        } 
                     }
-                    res.send(data)
+                    if (foundClient===undefined){
+                        const message={message: "No client with provided name."};
+                        res.render("error", message)
+                    }         
                 })
-                .catch(e => { console.log(e) })
+                .catch(error => { console.log(error) })
         }
         catch (error) { res.send({ error }) }
     }
