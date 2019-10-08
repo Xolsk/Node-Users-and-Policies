@@ -15,9 +15,9 @@ app.use(cors());
 
 const clientsRoutes = require("./routes/clients.js");
 const policiesRoutes = require("./routes/policies.js");
-const menuRoutes= require ("./routes/menu.js");
+const helperRoutes = require ("./routes/helpers.js")
 
-app.use ("/", menuRoutes)
+app.use("/", helperRoutes);
 app.use("/clients", clientsRoutes);
 app.use("/policies", policiesRoutes);
 app.set('views', path.join(__dirname, 'views'))
