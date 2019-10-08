@@ -4,15 +4,12 @@
 <body>
 	<div class="container">
 		<h1>General Menu</h1>
-		<p>Hello {{email}}.</p>
-        <p>Your credentials are coming for a {{role}} role.</p>
+		<p>Hello {{user.email}}.</p>
+        <p>Your credentials are coming for a {{user.role}} role.</p>
+		<p>{{token}} </p>
 	</div>
 	<div>
-	<p>From here,you can type on the browser the following routes that will take you to the different filtered data.</p>
-	<p>/clients/byId:"IDNUMBER" will localise the user with the correct id match and return the info</p>
-	<p>/clients/byName:"NAME" will localise the user with the correct name match and return the info</p>
-	<p>/policies/getPolByName:"NAME" will localise the user and show all his policies, ONLY if YOU ARE AN ADMIN</p>
-	<p>/policies/getUserByPol:"POLICY" will localise the user that has an specific policy,  ONLY IF YOU ARE AN ADMIN</p>
+		<form  method="get" action='/clients/byId/pepe'><input>Search for a particular user via name. <button>submit</button></form>
 	</div>
 	
 </body>

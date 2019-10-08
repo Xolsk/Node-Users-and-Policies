@@ -3,7 +3,9 @@ const fetch = require("node-fetch");
 class policiesController {
 
     async userByPolicy(req, res) {
+        
         const policyId = req.params.policy;
+        if (req.user.isAdmin === true){
         await fetch("http://www.mocky.io/v2/580891a4100000e8242b75c5")
             .then(answer => {
                 if (answer.status === 200) {
@@ -45,14 +47,19 @@ class policiesController {
                     res.render("error", message)
                 }
             })
-            .catch(error => { console.log(error) })
+            .catch(error => { console.log(error) })}
+            else{
+                res.render("error")
+            }
 
     }
 
     async policyByName(req, res) {
+        
         const name = req.params.name;
         let policies = [];
         let relevantClientId;
+        if (req.user.isAdmin === true){
         await fetch('http://www.mocky.io/v2/5808862710000087232b75ac')
             .then(answer => {
                 if (answer.status === 200) {
@@ -92,6 +99,10 @@ class policiesController {
                 };
             })
             .catch(e => { console.log(e) })
+        }
+        else{
+            res.render("error")
+        }
 
     }
 }

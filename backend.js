@@ -1,7 +1,7 @@
 const express = require('express'),
     app = express();
 const cors = require("cors");
-const path = require('path')
+const path = require('path');
 bodyParser = require('body-parser');
 
 // =================== initial settings ===================
@@ -15,9 +15,9 @@ app.use(cors());
 
 const clientsRoutes = require("./routes/clients.js");
 const policiesRoutes = require("./routes/policies.js");
-const helperRoutes = require ("./routes/helpers.js")
+const homepage= require ("./helpers/homepage.js")
 
-app.use("/", helperRoutes);
+app.use ("/", homepage)
 app.use("/clients", clientsRoutes);
 app.use("/policies", policiesRoutes);
 app.set('views', path.join(__dirname, 'views'))
