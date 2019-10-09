@@ -1,7 +1,7 @@
 In order to make this work:
 -Download/Clone repository
 -npm install to make sure all packages are in (requires JWT, Express, Express-fetch and some more)
--node backend.js to make the server run. Make sure you have port 5000 free!
+-node backend.js to make the server run. Make sure you have port 2000 free!
 
 -for now you will need Postman to play with the server, forget about the form displayed on your browser if you do check it out. That should come next.
 
