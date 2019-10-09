@@ -13,6 +13,7 @@ module.exports = function(req, res, next) {
     else {req.user.isAdmin=false;} 
     next();
   } catch (exception) {
-    res.status(400).send("Invalid token.");
+    const message= {message: "Invalid token"}
+    res.status(400).render("error",message);
   }
 };

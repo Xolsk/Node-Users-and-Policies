@@ -34,7 +34,7 @@ class policiesController {
                                 }
                                 if (match === undefined) {
                                     const message = { message: "The user ID on the policy data does not correspond to any client." }
-                                    res.render("error", message)
+                                    res.status(400).render("error", message)
                                 }
                             })
 
@@ -44,7 +44,7 @@ class policiesController {
                 }
                 if (clientId === undefined) {
                     const message = { message: "No match with that policy number." }
-                    res.render("error", message)
+                    res.statu(400).render("error", message)
                 }
             })
             .catch(error => { console.log(error) })}
@@ -95,13 +95,13 @@ class policiesController {
                 };
                 if (relevantClientId === undefined) {
                     const message = { message: "We did not found any client matching that Id." }
-                    res.render("error", message)
+                    res.status(400).render("error", message)
                 };
             })
             .catch(e => { console.log(e) })
         }
         else{
-            res.render("error")
+            res.status(400).render("error")
         }
 
     }

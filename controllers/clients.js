@@ -22,7 +22,7 @@ class clientsController {
                     }
                     if (user.role === undefined) {
                         const message = { message: "Not a valid user." }
-                        res.render("error", message);
+                        res.status(400).render("error", message);
                     }
                     else {
                         const token = jwt.sign(user, 'secret', { expiresIn: 7200 })
@@ -57,7 +57,7 @@ class clientsController {
                     }
                     if (foundClient === undefined) {
                         const message = { message: "No client by the provided Id." }
-                        res.render("error", message);
+                        res.status(400).render("error", message);
                     }
                 })
                 .catch(e => { console.log(e) })
@@ -86,7 +86,7 @@ class clientsController {
                     }
                     if (foundClient === undefined) {
                         const message = { message: "No client with provided name." };
-                        res.render("error", message)
+                        res.status(400).render("error", message)
                     }
                 })
                 .catch(error => { console.log(error) })

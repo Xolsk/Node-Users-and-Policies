@@ -8,10 +8,6 @@
         <p>Your credentials are coming for a {{user.role}} role.</p>
 		<p>{{token}} </p>
 	</div>
-	<div>
-		<form  method="get" action='/clients/byId/pepe'><input>Search for a particular user via name. <button>submit</button></form>
-	</div>
-	
 </body>
 
 </html>

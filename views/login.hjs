@@ -10,8 +10,7 @@
 	
 			<input type="submit" value="Log In">
 		</form>
-        <p>This simple form heps simulate basic log in operations. You can either log in with any email available on the Mocky.io or if you prefer, use "admin" or "user" in order to get the right authorisations.</p>
-
+        <p>In order to get the right credentials you must log as one of the available clients.</p>
 	</div>
 </body>
 
